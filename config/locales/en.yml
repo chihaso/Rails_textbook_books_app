@@ -19,6 +19,8 @@ en:
         create: 'Book was successfully created.'
         update: 'Book was successfully updated.'
         destroy: 'Book was successfully destroyed.'
+    confirm:
+      reconfirm: 'Are you sure?'
   activerecord:
     errors:
       messages:
