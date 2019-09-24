@@ -26,7 +26,7 @@
         <td><%= book.picture %></td>
         <td><%= link_to I18n.t('books_app.show'), book %></td>
         <td><%= link_to I18n.t('books_app.edit'), edit_book_path(book) %></td>
-        <td><%= link_to I18n.t('books_app.destroy'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to I18n.t('books_app.destroy'), book, method: :delete, data: { confirm: I18n.t('books_app.confirm.reconfirm') } %></td>
       </tr>
     <% end %>
   </tbody>

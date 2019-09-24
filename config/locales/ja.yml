@@ -19,6 +19,8 @@ ja:
         create: '書籍情報を登録しました'
         update: '書籍情報を更新しました'
         destroy: '書籍情報を削除しました'
+    confirm:
+      reconfirm: '本当によろしいでですか？'
   activerecord:
     errors:
       messages:
