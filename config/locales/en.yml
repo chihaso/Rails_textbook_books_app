@@ -11,7 +11,7 @@ en:
     new_book: 'New Book'
     back: 'Back'
     page_title:
-      index: 'books'
+      index: 'Books'
       new: 'New Book'
       edit: 'Editing Book'
     notice:
