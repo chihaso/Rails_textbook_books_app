@@ -14,6 +14,11 @@ en:
       index: 'books'
       new: 'New Book'
       edit: 'Editing Book'
+    notice:
+      success:
+        create: 'Book was successfully created.'
+        update: 'Book was successfully updated.'
+        destroy: 'Book was successfully destroyed.'
   activerecord:
     errors:
       messages:
