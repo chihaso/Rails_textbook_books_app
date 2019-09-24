@@ -9,6 +9,11 @@ en:
     edit: 'Edit'
     destroy: 'Delete'
     new_book: 'New Book'
+    back: 'Back'
+    page_title:
+      index: 'books'
+      new: 'New Book'
+      edit: 'Editing Book'
   activerecord:
     errors:
       messages:

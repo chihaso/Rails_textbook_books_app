@@ -9,6 +9,11 @@ ja:
     edit: '編集'
     destroy: '削除'
     new_book: '新しい本を登録'
+    back: '戻る'
+    page_title:
+      index: '書籍'
+      new: '新しい本'
+      edit: '本の情報を編集'
   activerecord:
     errors:
       messages:
