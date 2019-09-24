@@ -1,5 +1,14 @@
 ---
 en:
+  books_app:
+    title: 'Title'
+    memo: 'Memo'
+    author: 'Author'
+    picture: 'Picture'
+    show: 'Show'
+    edit: 'Edit'
+    destroy: 'Delete'
+    new_book: 'New Book'
   activerecord:
     errors:
       messages:
@@ -17,7 +26,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -43,7 +52,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-    - 
+    -
     - January
     - February
     - March
