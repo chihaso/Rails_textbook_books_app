@@ -32,7 +32,5 @@
 </table>
 <br>
 <%= paginate @books %>
-<p>全 <%= @books.total_count %> 件</p>
-<p><%= @books.total_pages %> ページ中 <%= @books.current_page %> ページ目を表示中</p>
 <br>
 <%= link_to I18n.t('books_app.new_book'), new_book_path %>
