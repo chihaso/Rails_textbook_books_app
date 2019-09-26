@@ -1,18 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<% p I18n.locale %>
 <%= link_to_if request.host.split('.').first != 'ja', '日本語',   "http://ja.localhost:3000#{request.path}"%> |
 <%= link_to_if request.host.split('.').first != 'en', 'English', "http://en.localhost:3000#{request.path}" %>
 
-<h1><%= I18n.t 'books_app.page_title.index' %></h1>
+<h1><%= t 'books_app.page_title.index' %></h1>
 
 <table>
   <thead>
     <tr>
-      <th><%= I18n.t 'books_app.title' %></th>
-      <th><%= I18n.t 'books_app.memo' %></th>
-      <th><%= I18n.t 'books_app.author' %></th>
-      <th><%= I18n.t 'books_app.picture' %></th>
+      <th><%= t 'books_app.title' %></th>
+      <th><%= t 'books_app.memo' %></th>
+      <th><%= t 'books_app.author' %></th>
+      <th><%= t 'books_app.picture' %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +23,9 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to I18n.t('books_app.show'), book %></td>
-        <td><%= link_to I18n.t('books_app.edit'), edit_book_path(book) %></td>
-        <td><%= link_to I18n.t('books_app.destroy'), book, method: :delete, data: { confirm: I18n.t('books_app.confirm.reconfirm') } %></td>
+        <td><%= link_to t('books_app.show'), book %></td>
+        <td><%= link_to t('books_app.edit'), edit_book_path(book) %></td>
+        <td><%= link_to t('books_app.destroy'), book, method: :delete, data: { confirm: t('books_app.confirm.reconfirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +33,4 @@
 
 <br>
 
-<%= link_to I18n.t('books_app.new_book'), new_book_path %>
+<%= link_to t('books_app.new_book'), new_book_path %>
