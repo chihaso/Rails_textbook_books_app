@@ -59,6 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'kaminari'
 gem 'devise'
+gem 'devise-i18n'
 
 # Correspond to GitHub ecurity alerts
 gem "rubyzip", ">= 1.3.0"
