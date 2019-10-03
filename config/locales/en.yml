@@ -21,6 +21,12 @@ en:
         destroy: 'Book was successfully destroyed.'
     confirm:
       reconfirm: 'Are you sure?'
+    authenticate:
+      sign_up: 'Sign up'
+      login: 'Login'
+      logout: 'Logout'
+      edit_profile: 'Edit profile'
+      login_user: 'Logged in as %{username}.'
   views:
     pagination:
       first: "&laquo; First"
