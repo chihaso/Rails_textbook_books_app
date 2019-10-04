@@ -30,7 +30,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: t("books_app.notice.success.create")
     else
-      frender :new
+      render :new
     end
   end
 
