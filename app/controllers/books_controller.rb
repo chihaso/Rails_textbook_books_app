@@ -27,25 +27,20 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: t("books_app.notice.success.create") }
-      else
-        format.html { render :new }
-      end
+    if @book.save
+      redirect_to @book, notice: t("books_app.notice.success.create")
+    else
+      frender :new
     end
   end
 
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
-    respond_to do |format|
-      if @book.update(book_params)
-        format.html { redirect_to @book, notice: t("books_app.notice.success.update") }
-      else
-        format.html { render :edit }
-      end
+    if @book.update(book_params)
+      redirect_to @book, notice: t("books_app.notice.success.update")
+    else
+      format.html { render :edit }
     end
   end
 
@@ -53,9 +48,7 @@ class BooksController < ApplicationController
   # DELETE /books/1.json
   def destroy
     @book.destroy
-    respond_to do |format|
-      format.html { redirect_to books_url, notice: t("books_app.notice.success.destroy") }
-    end
+    redirect_to books_url, notice: t("books_app.notice.success.destroy")
   end
 
   private
