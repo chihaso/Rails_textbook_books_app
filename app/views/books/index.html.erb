@@ -30,7 +30,8 @@
     <% end %>
   </tbody>
 </table>
-
+<br>
+<%= paginate @books %>
 <br>
 
 <%= link_to t('books_app.new_book'), new_book_path %>
