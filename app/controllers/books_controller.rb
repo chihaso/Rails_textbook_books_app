@@ -40,7 +40,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to @book, notice: t("books_app.notice.success.update")
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
