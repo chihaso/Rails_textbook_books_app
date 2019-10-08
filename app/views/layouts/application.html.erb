@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <%= link_to_if request.host.split('.').first != 'ja', '日本語',   "http://ja.localhost:3000#{request.path}"%> |
+    <%= link_to_if request.host.split('.').first != 'en', 'English', "http://en.localhost:3000#{request.path}" %>
     <p id="notice"><%= notice %></p>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
