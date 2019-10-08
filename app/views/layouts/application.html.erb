@@ -14,12 +14,13 @@
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         <%= t("books_app.authenticate.login_user", username: current_user.email) %>
-        <%= link_to t("books_app.authenticate.show_profile"), user_path(current_user.id), class: 'navbar-link' %> |
-        <%= link_to t("books_app.authenticate.edit_profile"), edit_user_registration_path, class: 'navbar-link' %> |
-        <%= link_to t("books_app.authenticate.logout"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+        <%= link_to t("users.shared.links.top"), books_path, class: 'navbar-link' %> |
+        <%= link_to t("users.shared.links.show_profile"), user_path(current_user.id), class: 'navbar-link' %> |
+        <%= link_to t("users.shared.links.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
       <% else %>
-        <%= link_to t("books_app.authenticate.sign_up"), new_user_registration_path, class: 'navbar-link'  %> |
-        <%= link_to t("books_app.authenticate.login"), new_user_session_path, class: 'navbar-link'  %>
+        <%= link_to t("users.shared.links.top"), books_path, class: 'navbar-link' %> |
+        <%= link_to t("users.shared.links.sign_up"), new_user_registration_path, class: 'navbar-link'  %> |
+        <%= link_to t("users.shared.links.sign_in"), new_user_session_path, class: 'navbar-link'  %>
       <% end %>
     </p>
     <%= yield %>

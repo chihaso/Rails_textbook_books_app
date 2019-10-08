@@ -106,6 +106,7 @@ en:
         we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
       new:
         sign_up: Sign up
+      show: User profile
       signed_up: Welcome! You have signed up successfully.
       signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
       signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
@@ -122,12 +123,16 @@ en:
     shared:
       links:
         back: Back
+        top: Top
         didn_t_receive_confirmation_instructions: Didn't receive confirmation instructions?
         didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
         forgot_your_password: Forgot your password?
         sign_in: Log in
+        sign_out: Log out
         sign_in_with_provider: Sign in with %{provider}
         sign_up: Sign up
+        show_profile: Profile
+        edit_profile: Edit Profile
       minimum_password_length:
         one: "(%{count} character minimum)"
         other: "(%{count} characters minimum)"
