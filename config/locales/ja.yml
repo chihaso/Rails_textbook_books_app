@@ -21,12 +21,6 @@ ja:
         destroy: '書籍情報を削除しました'
     confirm:
       reconfirm: '本当によろしいでですか？'
-    authenticate:
-      sign_up: '新規アカウント登録'
-      login: 'ログイン'
-      logout: 'ログアウト'
-      edit_profile: 'ユーザ情報編集'
-      login_user: '%{username}としてログイン中です。'
   views:
     pagination:
       first: "&laquo; 最初"

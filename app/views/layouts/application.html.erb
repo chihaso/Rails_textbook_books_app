@@ -15,7 +15,7 @@
     <p id="notice"><%= notice %></p>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
-        <%= t("books_app.authenticate.login_user", username: current_user.email) %>
+        <%= t("users.shared.login_user", username: current_user.email) %>
         <%= link_to t("users.shared.links.top"), books_path, class: 'navbar-link' %> |
         <%= link_to t("users.shared.links.show_profile"), user_path(current_user.id), class: 'navbar-link' %> |
         <%= link_to t("users.shared.links.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>

@@ -132,6 +132,7 @@ ja:
         show_profile: プロフィール
         edit_profile: プロフィール編集
       minimum_password_length: "（%{count}字以上）"
+      login_user: '%{username}としてログイン中です。'
     unlocks:
       new:
         resend_unlock_instructions: アカウントの凍結解除方法を再送する
