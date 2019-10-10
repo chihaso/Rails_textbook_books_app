@@ -1,5 +1,30 @@
----
 en:
+  layouts:
+    application:
+      login_user: 'Logged in as %{username}.'
+      top: Top
+      profile: Profile
+      sign_out: Log out
+      sign_up: Sign up
+      sign_in: Log in
+  users:
+    registrations:
+      minimum_password_length:
+        one: "(%{count} character minimum)"
+        other: "(%{count} characters minimum)"
+      postal_code: Postal code
+      street_address: Street address
+      self_introduction: Self introduction
+      back: Back
+    shared:
+      links:
+        sign_in: Log in
+    show:
+      profile: Profile
+      postal_code: Postal code
+      street_address: Street address
+      self_introduction: Self introduction
+      edit_profile: Edit profile
   books_app:
     title: 'Title'
     memo: 'Memo'
