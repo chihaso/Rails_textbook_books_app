@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :default_url_options
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  around_action :switch_locale
 
-  def set_locale
-    I18n.locale = extract_locale_from_tld || I18n.default_locale
+  def default_url_options
+    { locale: I18n.locale }
   end
 
-  def extract_locale_from_tld
-    parsed_locale = request.host.split(".").first
-    I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
+  def switch_locale(&action)
+    locale = params[:locale] || I18n.default_locale
+    I18n.with_locale(locale, &action)
   end
 
   def after_sign_in_path_for(resources)
@@ -19,8 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:postal_code, :street_address, :self_introduction])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:postal_code, :street_address, :self_introduction])
-  end
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:postal_code, :street_address, :self_introduction])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:postal_code, :street_address, :self_introduction])
+    end
 end

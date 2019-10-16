@@ -4,14 +4,11 @@
     <title>BooksApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= link_to_if request.host.split('.').first != 'ja', '日本語',   "http://ja.localhost:3000#{request.path}"%> |
-    <%= link_to_if request.host.split('.').first != 'en', 'English', "http://en.localhost:3000#{request.path}" %>
+    <%= create_language_links("ja") %> | <%= create_language_links("en") %>
     <p id="notice"><%= notice %></p>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
