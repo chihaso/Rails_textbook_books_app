@@ -1,4 +1,7 @@
 ja:
+  applicationhelper:
+    create_language_links:
+      unsupported_language: 非対応の言語
   layouts:
     application:
       login_user: '%{username}としてログイン中'

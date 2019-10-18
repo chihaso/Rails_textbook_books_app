@@ -1,4 +1,7 @@
 en:
+  applicationhelper:
+    create_language_links:
+      unsupported_language: Unsupported language
   layouts:
     application:
       login_user: 'Logged in as %{username}.'
