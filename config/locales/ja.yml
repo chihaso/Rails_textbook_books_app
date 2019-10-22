@@ -1,5 +1,31 @@
----
 ja:
+  applicationhelper:
+    create_language_links:
+      unsupported_language: 非対応の言語
+  layouts:
+    application:
+      login_user: '%{username}としてログイン中'
+      top: トップ
+      profile: プロフィール
+      sign_out: ログアウト
+      sign_up: 新規ユーザー登録
+      sign_in: ログイン
+  users:
+    registrations:
+      minimum_password_length: '(%{count}字以上)'
+      postal_code: 郵便番号
+      street_address: 住所
+      self_introduction: 自己紹介
+      back: 戻る
+    shared:
+      links:
+        sign_in: ログイン
+    show:
+      profile: プロフィール
+      postal_code: 郵便番号
+      street_address: 住所
+      self_introduction: 自己紹介
+      edit_profile: プロフィール編集
   books_app:
     title: '書名'
     memo: '内容'

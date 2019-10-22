@@ -1,8 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to_if request.host.split('.').first != 'ja', '日本語',   "http://ja.localhost:3000#{request.path}"%> |
-<%= link_to_if request.host.split('.').first != 'en', 'English', "http://en.localhost:3000#{request.path}" %>
-
 <h1><%= t 'books_app.page_title.index' %></h1>
 
 <table>
