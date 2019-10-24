@@ -36,3 +36,4 @@ yarn-debug.log*
 .vscode/settings.json
 .ruby-version
 .browserslistrc
+.env
