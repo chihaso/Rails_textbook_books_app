@@ -28,6 +28,7 @@ en:
       street_address: Street address
       self_introduction: Self introduction
       edit_profile: Edit profile
+      avatar: Avatar
   books_app:
     title: 'Title'
     memo: 'Memo'

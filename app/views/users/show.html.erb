@@ -1,4 +1,7 @@
 <h1><%= t '.profile' %></h1>
+<% if @user.avatar.attached? %>
+  <p><%= t '.avatar' %> : </p><%= image_tag @user.avatar %>
+<% end %>
 <p> id : <%= @user.id %></p>
 <p><%= t '.postal_code' %> : <%= @user.postal_code %></p>
 <p><%= t '.street_address' %> : <%= @user.street_address %></p>
