@@ -10,6 +10,7 @@ ja:
       sign_out: ログアウト
       sign_up: 新規ユーザー登録
       sign_in: ログイン
+      users: ユーザー一覧
   users:
     registrations:
       minimum_password_length: '(%{count}字以上)'

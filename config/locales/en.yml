@@ -10,6 +10,7 @@ en:
       sign_out: Log out
       sign_up: Sign up
       sign_in: Log in
+      users: Users
   users:
     registrations:
       minimum_password_length:

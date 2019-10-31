@@ -16,6 +16,7 @@
         <br>
         <%= link_to t(".top"), books_path, class: 'navbar-link' %> |
         <%= link_to t(".profile"), user_path(current_user.id), class: 'navbar-link' %> |
+        <%= link_to t(".users"), users_path, class: 'navbar-link' %> |
         <%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-link' %>
       <% else %>
         <%= link_to t(".top"), books_path, class: 'navbar-link' %> |
