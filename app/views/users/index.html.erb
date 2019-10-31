@@ -1,0 +1,23 @@
+<h1><%= t 'books_app.page_title.user_index' %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t 'books_app.user_id' %></th>
+      <th><%= t 'books_app.user_email' %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= paginate @users %>
+<br>

@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   root to: "books#index"
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
 end
