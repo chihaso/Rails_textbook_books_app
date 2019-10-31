@@ -19,6 +19,8 @@ en:
       street_address: Street address
       self_introduction: Self introduction
       back: Back
+      edit:
+        remove_avatar: Check to remove avatar
     shared:
       links:
         sign_in: Log in
