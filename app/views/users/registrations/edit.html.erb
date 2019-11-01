@@ -21,6 +21,11 @@
       <% end %>
   </div>
 
+  <div class="field">
+    <%= f.label t('users.registrations.name') %><br />
+    <%= f.text_field :name %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div><%= t('devise.registrations.edit.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
   <% end %>

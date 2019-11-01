@@ -16,6 +16,9 @@ en:
       minimum_password_length:
         one: "(%{count} character minimum)"
         other: "(%{count} characters minimum)"
+      user_id: ID
+      name: User Name
+      email: Email
       postal_code: Postal code
       street_address: Street address
       self_introduction: Self introduction
@@ -26,6 +29,9 @@ en:
       links:
         sign_in: Log in
     show:
+      user_id: ID
+      name: User Name
+      email: Email
       profile: Profile
       postal_code: Postal code
       street_address: Street address
@@ -46,6 +52,7 @@ en:
       index: 'Books'
       new: 'New Book'
       edit: 'Editing Book'
+      user_index: Users
     notice:
       success:
         create: 'Book was successfully created.'

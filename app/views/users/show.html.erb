@@ -6,7 +6,9 @@
   <p><%= t '.avatar' %> : </p>
   <%= image_tag "avatar_sample.jpeg", class: "avatar" %><br />
 <% end %>
-<p> id : <%= @user.id %></p>
+<p><%= t '.user_id' %> : <%= @user.id %></p>
+<p><%= t '.name' %> : <%= @user.name %></p>
+<p><%= t '.email' %> : <%= @user.email %></p>
 <p><%= t '.postal_code' %> : <%= @user.postal_code %></p>
 <p><%= t '.street_address' %> : <%= @user.street_address %></p>
 <p><%= t '.self_introduction' %> : <%= @user.self_introduction %></p>

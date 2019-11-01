@@ -14,6 +14,9 @@ ja:
   users:
     registrations:
       minimum_password_length: '(%{count}字以上)'
+      user_id: ID
+      name: ユーザー名
+      email: メールアドレス
       postal_code: 郵便番号
       street_address: 住所
       self_introduction: 自己紹介
@@ -25,6 +28,9 @@ ja:
         sign_in: ログイン
     show:
       profile: プロフィール
+      user_id: ID
+      name: ユーザー名
+      email: メールアドレス
       postal_code: 郵便番号
       street_address: 住所
       self_introduction: 自己紹介
@@ -44,6 +50,7 @@ ja:
       index: '書籍'
       new: '新しい本'
       edit: '本の情報を編集'
+      user_index: ユーザー一覧
     notice:
       success:
         create: '書籍情報を登録しました'
