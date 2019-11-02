@@ -16,7 +16,7 @@
         <td><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= render 'follow_button', user: user %></td>
+        <td><%= link_to t(".users_profile"), user_path(user.id) %></td>
       </tr>
     <% end %>
   </tbody>

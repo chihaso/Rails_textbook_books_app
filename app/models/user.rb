@@ -3,9 +3,9 @@
 class User < ApplicationRecord
   has_one_attached :avatar
   has_many :active_relationships, foreign_key: "follower_id", class_name: "Follow", dependent: :destroy
-  has_many :following, through: :active_relationships
+  has_many :following, through: :active_relationships, source: :followee
   has_many :passive_relationships, foreign_key: "followee_id", class_name: "Follow", dependent: :destroy
-  has_many :followers, through: :follower_relationships
+  has_many :followers, through: :passive_relationships, source: :follower
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def following?(other_user)
-    following.include?(other_user.id)
+    following.include?(other_user)
   end
 
   # 入力された認証情報からDBに登録されたユーザーをさがしてUserクラスのオブジェクトとして返す(見つからなければ新規に登録)
