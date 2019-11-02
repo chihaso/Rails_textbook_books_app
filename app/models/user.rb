@@ -2,7 +2,10 @@
 
 class User < ApplicationRecord
   has_one_attached :avatar
-  has_many :users, through: :follows
+  has_many :active_relationships, foreign_key: "follower_id", class_name: "Follow", dependent: :destroy
+  has_many :following, through: :active_relationships
+  has_many :passive_relationships, foreign_key: "followee_id", class_name: "Follow", dependent: :destroy
+  has_many :followers, through: :follower_relationships
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -10,19 +13,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable
 
-  def follow(user_to_follow)
-    unless user == self
-      self.follows.find_or_create_by(follower_id: self.id, followee_id: user_to_follow.id)
-    end
+  def follow(other_user)
+    active_relationships.create(followee_id: other_user.id)
   end
 
-  def unfollow(followed_user)
-    followship = self.follows.find_by(follower_id: self.id, followee_id: followed.id)
-    followship.destroy if followship
+  def unfollow(other_user)
+    active_relationships.find_by(followee_id: other_user.id).destroy
   end
 
   def following?(other_user)
-    self.followers.include?(other_user)
+    following.include?(other_user.id)
   end
 
   # 入力された認証情報からDBに登録されたユーザーをさがしてUserクラスのオブジェクトとして返す(見つからなければ新規に登録)
