@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   }
   root to: "books#index"
   resources :users, only: [:show, :index]
+  resources :follows, only: [:create, :destroy]
 end

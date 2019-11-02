@@ -12,4 +12,15 @@
 <p><%= t '.postal_code' %> : <%= @user.postal_code %></p>
 <p><%= t '.street_address' %> : <%= @user.street_address %></p>
 <p><%= t '.self_introduction' %> : <%= @user.self_introduction %></p>
+
+<% unless current_user == @user %>
+  <div id="follow_form">
+    <% if current_user.following?(@user) %>
+      <%= render "unfollow" %>
+    <% else %>
+      <%= render "follow" %>
+    <% end %>
+  </div>
+<% end %>
+
 <%= link_to t(".edit_profile"), edit_user_registration_path, class: 'navbar-link' %>
