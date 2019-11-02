@@ -8,6 +8,19 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div class="field">
+    <%= f.label t("users.show.avatar") %><br />
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class: "avatar" %><br />
+        <label><%= t ".remove_avatar" %></label>
+        <%= check_box_tag :remove_avatar_bit, 1, false, {} %><br />
+        <%= f.file_field :avatar %>
+      <% else %>
+        <%= image_tag "avatar_sample", class: "avatar" %><br />
+        <%= f.file_field :avatar %>
+      <% end %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div><%= t('devise.registrations.edit.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
   <% end %>

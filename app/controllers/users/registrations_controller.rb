@@ -20,9 +20,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    if params[:remove_avatar_bit] == "1"
+      current_user.avatar.purge
+    end
+
+    super
+  end
 
   # DELETE /resource
   # def destroy

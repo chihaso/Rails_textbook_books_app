@@ -17,6 +17,8 @@ ja:
       street_address: 住所
       self_introduction: 自己紹介
       back: 戻る
+      edit:
+        remove_avatar: 画像を削除する場合はチェック
     shared:
       links:
         sign_in: ログイン
@@ -26,6 +28,7 @@ ja:
       street_address: 住所
       self_introduction: 自己紹介
       edit_profile: プロフィール編集
+      avatar: プロフィール画像
   books_app:
     title: '書名'
     memo: '内容'
