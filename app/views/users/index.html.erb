@@ -17,6 +17,15 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= link_to t(".users_profile"), user_path(user.id) %></td>
+        <td><% unless current_user == user %>
+          <div id="follow_form">
+            <% if current_user.following?(user) %>
+              <%= render "unfollow", user: user %>
+            <% else %>
+              <%= render "follow", user: user %>
+            <% end %>
+          </div>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>
