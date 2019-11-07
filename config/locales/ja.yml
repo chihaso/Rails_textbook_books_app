@@ -12,6 +12,14 @@ ja:
       sign_in: ログイン
       users: ユーザー一覧
   users:
+    index:
+      users_profile: プロフィール
+    followers: フォロワー一覧
+    following: フォロー一覧
+    follow:
+      follow: フォローする
+    unfollow:
+      unfollow: フォロー解除
     registrations:
       minimum_password_length: '(%{count}字以上)'
       user_id: ID
@@ -51,6 +59,8 @@ ja:
       new: '新しい本'
       edit: '本の情報を編集'
       user_index: ユーザー一覧
+      followers: フォロワー一覧
+      following: フォロー一覧
     notice:
       success:
         create: '書籍情報を登録しました'

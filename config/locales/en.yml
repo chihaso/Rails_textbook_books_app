@@ -12,6 +12,14 @@ en:
       sign_in: Log in
       users: Users
   users:
+    index:
+      users_profile: User Profile
+    followers: Followers
+    following: Following
+    follow:
+      follow: Follow!
+    unfollow:
+      unfollow: Unfollow...
     registrations:
       minimum_password_length:
         one: "(%{count} character minimum)"
@@ -53,6 +61,8 @@ en:
       new: 'New Book'
       edit: 'Editing Book'
       user_index: Users
+      followers: Followers
+      following: Following
     notice:
       success:
         create: 'Book was successfully created.'
