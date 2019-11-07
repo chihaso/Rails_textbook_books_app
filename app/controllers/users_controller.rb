@@ -20,4 +20,9 @@ class UsersController < ApplicationController
     follower_ids = user.passive_relationships.map  { |a| a.follower_id }
     @users = Kaminari.paginate_array(follower_ids.map { |id| User.find(id) }).page(params[:page]).per(5)
   end
+
+  def post
+    user = User.find(params[:id])
+    @posts = Books.find_by(post_user_id: user.id)
+  end
 end
