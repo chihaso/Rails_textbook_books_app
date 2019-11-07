@@ -11,6 +11,8 @@ en:
       sign_up: Sign up
       sign_in: Log in
       users: Users
+      followers: Followers
+      following: Following
   users:
     index:
       users_profile: User Profile

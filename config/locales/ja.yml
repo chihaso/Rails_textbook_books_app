@@ -11,6 +11,8 @@ ja:
       sign_up: 新規ユーザー登録
       sign_in: ログイン
       users: ユーザー一覧
+      followers: フォロワー一覧
+      following: フォロー一覧
   users:
     index:
       users_profile: プロフィール
