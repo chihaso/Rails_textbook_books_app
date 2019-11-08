@@ -12,7 +12,10 @@
 <p><%= t '.postal_code' %> : <%= @user.postal_code %></p>
 <p><%= t '.street_address' %> : <%= @user.street_address %></p>
 <p><%= t '.self_introduction' %> : <%= @user.self_introduction %></p>
-<p><%= link_to(t(".user_posts"), posts_user_path(id: @user.id)) %></p>
+
+<% if current_user.following?(@user) || current_user == @user %>
+  <p><%= link_to(t(".user_posts"), posts_user_path(id: @user.id)) %></p>
+<% end %>
 
 <% unless current_user == @user %>
   <div id=<%="follow_form_#{@user.id}"%>>
@@ -24,4 +27,6 @@
   </div>
 <% end %>
 
-<%= link_to t(".edit_profile"), edit_user_registration_path, class: 'navbar-link' %>
+<% if current_user.following?(@user) || current_user == @user %>
+  <%= link_to t(".edit_profile"), edit_user_registration_path, class: 'navbar-link' %>
+<% end %>
