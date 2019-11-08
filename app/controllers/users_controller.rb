@@ -21,8 +21,8 @@ class UsersController < ApplicationController
     @users = Kaminari.paginate_array(follower_ids.map { |id| User.find(id) }).page(params[:page]).per(5)
   end
 
-  def post
-    user = User.find(params[:id])
-    @posts = Books.find_by(post_user_id: user.id)
+  def posts
+    @user = User.find(params[:id])
+    @posts = Kaminari.paginate_array(@user.posts).page(params[:page]).per(5)
   end
 end

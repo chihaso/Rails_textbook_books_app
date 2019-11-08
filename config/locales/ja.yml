@@ -46,7 +46,9 @@ ja:
       self_introduction: 自己紹介
       edit_profile: プロフィール編集
       avatar: プロフィール画像
+      user_posts: ユーザーの投稿一覧
   books_app:
+    book_id: 書籍ID
     title: '書名'
     memo: '内容'
     author: '著者'
@@ -63,6 +65,7 @@ ja:
       user_index: ユーザー一覧
       followers: フォロワー一覧
       following: フォロー一覧
+      user_posts: "%{username}の投稿一覧"
     notice:
       success:
         create: '書籍情報を登録しました'

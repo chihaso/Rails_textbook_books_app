@@ -12,6 +12,7 @@
 <p><%= t '.postal_code' %> : <%= @user.postal_code %></p>
 <p><%= t '.street_address' %> : <%= @user.street_address %></p>
 <p><%= t '.self_introduction' %> : <%= @user.self_introduction %></p>
+<p><%= link_to(t(".user_posts"), posts_user_path(id: @user.id)) %></p>
 
 <% unless current_user == @user %>
   <div id=<%="follow_form_#{@user.id}"%>>
