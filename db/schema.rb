@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_062943) do
+ActiveRecord::Schema.define(version: 2019_11_08_135120) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_062943) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
     t.string "picture"
-    t.integer "post_user_id", default: 0
+    t.integer "post_user_id"
     t.index ["post_user_id"], name: "index_books_on_post_user_id"
   end
 
