@@ -13,10 +13,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_11_143908) do
 =======
 ActiveRecord::Schema.define(version: 2019_11_09_003908) do
 >>>>>>> Add reports table.
+=======
+ActiveRecord::Schema.define(version: 2019_11_12_041628) do
+>>>>>>> Add CRUD for report.
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -64,6 +68,8 @@ ActiveRecord::Schema.define(version: 2019_11_09_003908) do
     t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,4 +94,5 @@ ActiveRecord::Schema.define(version: 2019_11_09_003908) do
   add_foreign_key "books", "users"
   add_foreign_key "follows", "users", column: "followee_id"
   add_foreign_key "follows", "users", column: "follower_id"
+  add_foreign_key "reports", "users"
 end
