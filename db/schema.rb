@@ -12,15 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_11_11_143908) do
-=======
-ActiveRecord::Schema.define(version: 2019_11_09_003908) do
->>>>>>> Add reports table.
-=======
 ActiveRecord::Schema.define(version: 2019_11_12_041628) do
->>>>>>> Add CRUD for report.
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
