@@ -1,4 +1,29 @@
 ja:
+  reports:
+    form:
+      title: タイトル
+      memo: 内容
+    edit:
+      edit: 日報編集
+      show: 表示
+      back: 一覧に戻る
+    index:
+      index: 日報一覧
+      title: タイトル
+      post_user: ユーザー
+      show: 表示
+      edit: 編集
+      destroy: 削除
+      new_report: 新規日報
+    new:
+      new: 新規日報
+      back: 一覧に戻る
+    show:
+      post_user: ユーザー
+      title: タイトル
+      memo: 内容
+      edit: 日報編集
+      back: 一覧に戻る
   applicationhelper:
     create_language_links:
       unsupported_language: 非対応の言語
@@ -13,7 +38,15 @@ ja:
       users: ユーザー一覧
       followers: フォロワー一覧
       following: フォロー一覧
+      reports: 日報一覧
   users:
+    reports:
+      user_reports: '%{username}の日報一覧'
+      report_id: ID
+      title: タイトル
+      show: 表示
+      edit: 編集
+      destroy: 削除
     index:
       users_profile: プロフィール
     followers: フォロワー一覧
@@ -42,7 +75,8 @@ ja:
       self_introduction: 自己紹介
       edit_profile: プロフィール編集
       avatar: プロフィール画像
-      user_posts: ユーザーの投稿一覧
+      user_posts: 投稿した本の一覧
+      user_reports: 日報一覧
   followers:
     index:
       users_profile: プロフィール
@@ -230,6 +264,7 @@ ja:
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
       follower_only: フォロワーだけに公開されるページです
+      your_own_resources_only: 他人の投稿には実行できません
     template:
       body: 次の項目を確認してください
       header:

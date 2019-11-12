@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :following, only: [:index]
       resources :followers, only: [:index]
       resources :posts, only: [:index]
+      get :reports
     end
   end
 

@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :limit_others, only: [:edit, :update, :destroy]
 
   # GET /reports
   def index
@@ -56,5 +57,12 @@ class ReportsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
       params.require(:report).permit(:title, :memo, :user_id)
+    end
+
+    def limit_others
+      report = Report.find(params[:id])
+      unless current_user == report.post_user
+        redirect_back fallback_location: reports_path, notice: t("errors.messages.your_own_resources_only")
+      end
     end
 end
