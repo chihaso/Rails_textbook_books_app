@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :posts, foreign_key: "user_id", class_name: "Book"
   has_many :reports, foreign_key: "user_id", class_name: "Report"
+  has_many :comments, foreign_key: "user_id"
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
