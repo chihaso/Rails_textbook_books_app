@@ -1,4 +1,8 @@
 ja:
+  comments:
+    list:
+      comments: コメント
+      post_at: "%{time}に投稿"
   reports:
     form:
       title: タイトル

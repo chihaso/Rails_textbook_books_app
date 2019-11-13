@@ -1,0 +1,10 @@
+<h2><%= t ".comments" %></h2>
+
+<div class="comments_area">
+  <% comments.each do |comment| %>
+    <div class="comment">
+      <p><%= comment.post_user.name %> <%= t(".post_at", time: comment.updated_at) %></p>
+      <p><%= comment.memo %></p>
+    </div>
+  <% end %>
+</div>

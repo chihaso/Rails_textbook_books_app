@@ -1,4 +1,8 @@
 en:
+  comments:
+    list:
+      comments: Comments 
+      post_at: "at %{time}"
   reports:
     form:
       title: Title
