@@ -14,6 +14,11 @@
   </div>
 
   <div class="field">
+    <%= f.label t('users.registrations.name') %><br />
+    <%= f.text_field :name, value: "" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em><%= t('users.registrations.minimum_password_length', count: @minimum_password_length) %></em>

@@ -10,11 +10,21 @@ en:
       sign_out: Log out
       sign_up: Sign up
       sign_in: Log in
+      users: Users
+      followers: Followers
+      following: Following
   users:
+    index:
+      users_profile: User Profile
+    followers: Followers
+    following: Following
     registrations:
       minimum_password_length:
         one: "(%{count} character minimum)"
         other: "(%{count} characters minimum)"
+      user_id: ID
+      name: User Name
+      email: Email
       postal_code: Postal code
       street_address: Street address
       self_introduction: Self introduction
@@ -25,13 +35,29 @@ en:
       links:
         sign_in: Log in
     show:
+      user_id: ID
+      name: User Name
+      email: Email
       profile: Profile
       postal_code: Postal code
       street_address: Street address
       self_introduction: Self introduction
       edit_profile: Edit profile
       avatar: Avatar
+      user_posts: Posts
+  followers:
+    index:
+      users_profile: User Profile
+  following:
+    index:
+      users_profile: User Profile
+  follows:
+    follow:
+      follow: Follow!
+    unfollow:
+      unfollow: Unfollow...
   books_app:
+    book_id: ID
     title: 'Title'
     memo: 'Memo'
     author: 'Author'
@@ -45,6 +71,10 @@ en:
       index: 'Books'
       new: 'New Book'
       edit: 'Editing Book'
+      user_index: Users
+      followers: Followers
+      following: Following
+      user_posts: "%{username}'s posts"
     notice:
       success:
         create: 'Book was successfully created.'
@@ -207,6 +237,7 @@ en:
       wrong_length:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
+      follower_only: Public to followers only.
     template:
       body: 'There were problems with the following fields:'
       header:

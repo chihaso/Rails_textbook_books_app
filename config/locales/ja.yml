@@ -10,9 +10,19 @@ ja:
       sign_out: ログアウト
       sign_up: 新規ユーザー登録
       sign_in: ログイン
+      users: ユーザー一覧
+      followers: フォロワー一覧
+      following: フォロー一覧
   users:
+    index:
+      users_profile: プロフィール
+    followers: フォロワー一覧
+    following: フォロー一覧
     registrations:
       minimum_password_length: '(%{count}字以上)'
+      user_id: ID
+      name: ユーザー名
+      email: メールアドレス
       postal_code: 郵便番号
       street_address: 住所
       self_introduction: 自己紹介
@@ -24,12 +34,28 @@ ja:
         sign_in: ログイン
     show:
       profile: プロフィール
+      user_id: ID
+      name: ユーザー名
+      email: メールアドレス
       postal_code: 郵便番号
       street_address: 住所
       self_introduction: 自己紹介
       edit_profile: プロフィール編集
       avatar: プロフィール画像
+      user_posts: ユーザーの投稿一覧
+  followers:
+    index:
+      users_profile: プロフィール
+  following:
+    index:
+      users_profile: プロフィール
+  follows:
+    follow:
+      follow: フォローする
+    unfollow:
+      unfollow: フォロー解除
   books_app:
+    book_id: 書籍ID
     title: '書名'
     memo: '内容'
     author: '著者'
@@ -43,6 +69,10 @@ ja:
       index: '書籍'
       new: '新しい本'
       edit: '本の情報を編集'
+      user_index: ユーザー一覧
+      followers: フォロワー一覧
+      following: フォロー一覧
+      user_posts: "%{username}の投稿一覧"
     notice:
       success:
         create: '書籍情報を登録しました'
@@ -199,6 +229,7 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      follower_only: フォロワーだけに公開されるページです
     template:
       body: 次の項目を確認してください
       header:
