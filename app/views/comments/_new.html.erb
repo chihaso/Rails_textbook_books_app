@@ -1,0 +1,30 @@
+<%= form_with(model: comments, local: true) do |form| %>
+  <% if comments.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comments.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% comments.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :memo, t(".new_comment") %>
+    <%= form.text_area :memo %>
+  </div>
+
+  <div>
+    <% if book_id %>
+      <%= hidden_field_tag :book_id, book_id %>
+    <% elsif report_id %>
+      <%= hidden_field_tag :report_id, report_id %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
