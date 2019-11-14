@@ -1,4 +1,4 @@
-<h1><%= t 'books_app.page_title.following' %></h1>
+<h1><%= t 'books_app.page_title.followers' %></h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><% unless current_user == user %>
           <div id=<%="follow_form_#{user.id}"%>>
             <% if current_user.following?(user) %>
-              <%= render "unfollow", user: user %>
+              <%= render "follows/unfollow", user: user %>
             <% else %>
-              <%= render "follow", user: user %>
+              <%= render "follows/follow", user: user %>
             <% end %>
           </div>
         <% end %></td>

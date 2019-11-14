@@ -18,10 +18,6 @@ en:
       users_profile: User Profile
     followers: Followers
     following: Following
-    follow:
-      follow: Follow!
-    unfollow:
-      unfollow: Unfollow...
     registrations:
       minimum_password_length:
         one: "(%{count} character minimum)"
@@ -48,7 +44,18 @@ en:
       self_introduction: Self introduction
       edit_profile: Edit profile
       avatar: Avatar
-      user_posts: ユーザーの投稿一覧
+      user_posts: Posts
+  followers:
+    index:
+      users_profile: User Profile
+  following:
+    index:
+      users_profile: User Profile
+  follows:
+    follow:
+      follow: Follow!
+    unfollow:
+      unfollow: Unfollow...
   books_app:
     book_id: ID
     title: 'Title'

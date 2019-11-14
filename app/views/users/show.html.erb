@@ -14,15 +14,15 @@
 <p><%= t '.self_introduction' %> : <%= @user.self_introduction %></p>
 
 <% if current_user.following?(@user) || current_user == @user %>
-  <p><%= link_to(t(".user_posts"), posts_user_path(id: @user.id)) %></p>
+  <p><%= link_to(t(".user_posts"), posts_path(id: @user.id)) %></p>
 <% end %>
 
 <% unless current_user == @user %>
   <div id=<%="follow_form_#{@user.id}"%>>
     <% if current_user.following?(@user) %>
-      <%= render "unfollow", user: @user %>
+      <%= render "follows/unfollow", user: @user %>
     <% else %>
-      <%= render "follow", user: @user %>
+      <%= render "follows/follow", user: @user %>
     <% end %>
   </div>
 <% end %>

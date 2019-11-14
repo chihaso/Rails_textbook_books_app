@@ -18,10 +18,6 @@ ja:
       users_profile: プロフィール
     followers: フォロワー一覧
     following: フォロー一覧
-    follow:
-      follow: フォローする
-    unfollow:
-      unfollow: フォロー解除
     registrations:
       minimum_password_length: '(%{count}字以上)'
       user_id: ID
@@ -47,6 +43,17 @@ ja:
       edit_profile: プロフィール編集
       avatar: プロフィール画像
       user_posts: ユーザーの投稿一覧
+  followers:
+    index:
+      users_profile: プロフィール
+  following:
+    index:
+      users_profile: プロフィール
+  follows:
+    follow:
+      follow: フォローする
+    unfollow:
+      unfollow: フォロー解除
   books_app:
     book_id: 書籍ID
     title: '書名'
