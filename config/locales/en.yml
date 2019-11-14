@@ -3,6 +3,18 @@ en:
     list:
       comments: Comments 
       post_at: "at %{time}"
+      edit: Edit
+      delete: Delete
+    edit:
+      edit: Edit
+    destroy:
+      success:
+        destroy: Delete comment.
+    update:
+      success:
+        update: Update comment.
+    form:
+      new_comment: Comment
   reports:
     form:
       title: Title
@@ -28,6 +40,12 @@ en:
       memo: Memo
       edit: Edit Report
       back: Back to Index
+    destroy:
+      success:
+        destroy: Delete report.
+    update:
+      success:
+        update: Update report.
   applicationhelper:
     create_language_links:
       unsupported_language: Unsupported language

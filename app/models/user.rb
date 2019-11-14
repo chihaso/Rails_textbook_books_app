@@ -6,9 +6,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followee
   has_many :passive_relationships, foreign_key: "followee_id", class_name: "Follow", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
-  has_many :posts, foreign_key: "user_id", class_name: "Book"
-  has_many :reports, foreign_key: "user_id", class_name: "Report"
-  has_many :comments, foreign_key: "user_id"
+  has_many :posts, foreign_key: "user_id", class_name: "Book", dependent: :destroy
+  has_many :reports, foreign_key: "user_id", class_name: "Report", dependent: :destroy
+  has_many :comments, foreign_key: "user_id", dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

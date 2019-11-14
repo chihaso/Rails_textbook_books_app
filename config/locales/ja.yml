@@ -3,6 +3,18 @@ ja:
     list:
       comments: コメント
       post_at: "%{time}に投稿"
+      edit: 編集
+      delete: 削除
+    edit:
+      edit: コメント編集
+    destroy:
+      success:
+        destroy: コメントを削除しました
+    update:
+      success:
+        update: コメントを更新しました
+    form:
+      comment: コメント
   reports:
     form:
       title: タイトル
@@ -28,6 +40,12 @@ ja:
       memo: 内容
       edit: 日報編集
       back: 一覧に戻る
+    destroy:
+      success:
+        destroy: 日報を削除しました
+    update:
+      success:
+        update: 日報を更新しました
   applicationhelper:
     create_language_links:
       unsupported_language: 非対応の言語
