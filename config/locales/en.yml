@@ -1,4 +1,7 @@
 en:
+  books:
+    show:
+      show: Book Information
   comments:
     list:
       comments: Comments 
@@ -26,7 +29,7 @@ en:
     index:
       index: Reports Index
       title: Title
-      post_user: User
+      user: User
       show: Show
       edit: Edit
       destroy: Destroy
@@ -35,7 +38,8 @@ en:
       new: New Report
       back: Back to Index
     show:
-      post_user: User
+      show: Report
+      user: User
       title: Title
       memo: Memo
       edit: Edit Report
@@ -300,6 +304,7 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+      unknown_comment_destination: Can't find comment destination.
   helpers:
     select:
       prompt: Please select

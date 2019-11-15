@@ -1,4 +1,7 @@
 ja:
+  books:
+    show:
+      show: 書籍情報
   comments:
     list:
       comments: コメント
@@ -26,7 +29,7 @@ ja:
     index:
       index: 日報一覧
       title: タイトル
-      post_user: ユーザー
+      user: ユーザー
       show: 表示
       edit: 編集
       destroy: 削除
@@ -35,7 +38,8 @@ ja:
       new: 新規日報
       back: 一覧に戻る
     show:
-      post_user: ユーザー
+      show: 日報
+      user: ユーザー
       title: タイトル
       memo: 内容
       edit: 日報編集
@@ -287,6 +291,7 @@ ja:
       wrong_length: は%{count}文字で入力してください
       follower_only: フォロワーだけに公開されるページです
       your_own_resources_only: 他人の投稿には実行できません
+      unknown_comment_destination: コメント先が見つかりません
     template:
       body: 次の項目を確認してください
       header:
