@@ -7,11 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.post_user = User.find current_user.id
-    if params[:book_id]
-      @comment.book = Book.find params[:book_id]
-    elsif params[:report_id]
-      @comment.report = Report.find params[:report_id]
-    end
+    select_destination comment: @comment
     @comment.save
     redirect_back fallback_location: root_path
   end
@@ -21,13 +17,8 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      if @comment.book_id
-        redirect_to book_path(@comment.book_id), notice: t(".success.update")
-      elsif @comment.report_id
-        redirect_to report_path(@comment.report_id), notice: t(".success.update")
-      else
-        redirect_to root_path
-      end
+      flash[:notice] = t ".success.update"
+      redirect_to_comment_destination comment: @comment
     else
       render :edit
     end
@@ -35,13 +26,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    if @comment.book_id
-      redirect_to book_path(@comment.book_id), notice: t(".success.destroy")
-    elsif @comment.report_id
-      redirect_to report_path(@comment.report_id), notice: t(".success.destroy")
-    else
-      redirect_to root_path
-    end
+    flash[:notice] = t ".success.destroy"
+    redirect_to_comment_destination comment: @comment
   end
 
   private
@@ -56,13 +42,26 @@ class CommentsController < ApplicationController
     def limit_others
       comment = Comment.find params[:id]
       unless current_user == comment.post_user
-        if @comment.book_id
-          redirect_to book_path(@comment.book_id), notice: t("errors.messages.your_own_resources_only")
-        elsif @comment.report_id
-          redirect_to report_path(@comment.report_id), notice: t("errors.messages.your_own_resources_only")
-        else
-          redirect_to root_path
-        end
+        flash[:notice] = t "errors.messages.your_own_resources_only"
+        redirect_to_comment_destination comment: comment
+      end
+    end
+
+    def select_destination(comment:)
+      if params[:book_id]
+        comment.book = Book.find params[:book_id]
+      elsif params[:report_id]
+        comment.report = Report.find params[:report_id]
+      end
+    end
+
+    def redirect_to_comment_destination(comment:)
+      if comment.book_id
+        redirect_to book_path(comment.book_id)
+      elsif comment.report_id
+        redirect_to report_path(comment.report_id)
+      else
+        redirect_to root_path
       end
     end
 end
