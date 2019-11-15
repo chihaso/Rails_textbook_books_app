@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.post_user = User.find current_user.id
+    @comment.user = User.find current_user.id
     select_destination comment: @comment
     @comment.save
     redirect_back fallback_location: root_path
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
 
     def limit_others
       comment = Comment.find params[:id]
-      unless current_user == comment.post_user
+      unless current_user == comment.user
         flash[:notice] = t "errors.messages.your_own_resources_only"
         redirect_to_comment_destination comment: comment
       end

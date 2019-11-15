@@ -25,7 +25,7 @@ class ReportsController < ApplicationController
   # POST /reports
   def create
     @report = Report.new(report_params)
-    @report.post_user = User.find current_user.id
+    @report.user = User.find current_user.id
     if @report.save
       redirect_to @report, notice: t(".success.create")
     else
@@ -61,7 +61,7 @@ class ReportsController < ApplicationController
 
     def limit_others
       report = Report.find(params[:id])
-      unless current_user == report.post_user
+      unless current_user == report.user
         redirect_back fallback_location: reports_path, notice: t("errors.messages.your_own_resources_only")
       end
     end

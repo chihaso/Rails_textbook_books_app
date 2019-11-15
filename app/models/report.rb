@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Report < ApplicationRecord
-  belongs_to :post_user, class_name: "User", foreign_key: :user_id
+  belongs_to :user
   has_many :comments, foreign_key: "report_id", dependent: :destroy
 end
