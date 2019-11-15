@@ -11,7 +11,7 @@
 <p><%= t '.email' %> : <%= @user.email %></p>
 <p><%= t '.postal_code' %> : <%= @user.postal_code %></p>
 <p><%= t '.street_address' %> : <%= @user.street_address %></p>
-<p><%= t '.self_introduction' %> : <%= @user.self_introduction %></p>
+<p><%= t '.self_introduction' %> : <pre><%= @user.self_introduction %></pre></p>
 
 <p><%= link_to(t(".user_reports"), reports_user_path(id: @user.id)) %></p>
 <% if current_user.following?(@user) || current_user == @user %>
