@@ -27,7 +27,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-    @book.user = User.find current_user.id
+    @book.user = current_user
     if @book.save
       redirect_to @book, notice: t("books_app.notice.success.create")
     else
