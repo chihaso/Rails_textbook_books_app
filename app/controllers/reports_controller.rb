@@ -25,7 +25,7 @@ class ReportsController < ApplicationController
   # POST /reports
   def create
     @report = Report.new(report_params)
-    @report.user = User.find current_user.id
+    @report.user = current_user
     if @report.save
       redirect_to @report, notice: t(".success.create")
     else
