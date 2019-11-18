@@ -1,4 +1,55 @@
 en:
+  books:
+    show:
+      show: Book Information
+  comments:
+    list:
+      comments: Comments 
+      post_at: "at %{time}"
+      edit: Edit
+      delete: Delete
+    edit:
+      edit: Edit
+    destroy:
+      success:
+        destroy: Delete comment.
+    update:
+      success:
+        update: Update comment.
+    form:
+      new_comment: Comment
+  reports:
+    form:
+      title: Title
+      memo: Memo
+    edit:
+      edit: Edit Report
+      show: Show
+      back: Back to Index
+    index:
+      index: Reports Index
+      title: Title
+      user: User
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      new_report: New Report
+    new:
+      new: New Report
+      back: Back to Index
+    show:
+      show: Report
+      user: User
+      title: Title
+      memo: Memo
+      edit: Edit Report
+      back: Back to Index
+    destroy:
+      success:
+        destroy: Delete report.
+    update:
+      success:
+        update: Update report.
   applicationhelper:
     create_language_links:
       unsupported_language: Unsupported language
@@ -13,7 +64,15 @@ en:
       users: Users
       followers: Followers
       following: Following
+      reports: Reports
   users:
+    reports:
+      user_reports: "%{username}'s Reports"
+      report_id: ID
+      title: Title
+      show: Show
+      edit: Edit
+      destroy: Destroy
     index:
       users_profile: User Profile
     followers: Followers
@@ -44,7 +103,8 @@ en:
       self_introduction: Self introduction
       edit_profile: Edit profile
       avatar: Avatar
-      user_posts: Posts
+      user_posts: Post Books
+      user_reports: Reports
   followers:
     index:
       users_profile: User Profile
@@ -238,11 +298,13 @@ en:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
       follower_only: Public to followers only.
+      your_own_resources_only: Can't execute for others posts.
     template:
       body: 'There were problems with the following fields:'
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+      unknown_comment_destination: Can't find comment destination.
   helpers:
     select:
       prompt: Please select

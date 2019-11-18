@@ -10,4 +10,14 @@ module ApplicationHelper
       t("applicationhelper.create_language_links.unsupported_language")
     end
   end
+
+  def set_comment_destination(book_id:, report_id:)
+    if book_id
+      hidden_field_tag :book_id, book_id
+    elsif report_id
+      hidden_field_tag :report_id, report_id
+    else
+      flash[:notice] = t(errors.messages.unknown_comment_destination)
+    end
+  end
 end

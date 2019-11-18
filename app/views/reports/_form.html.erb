@@ -1,0 +1,17 @@
+<%= form_with(model: report, local: true) do |form| %>
+  <%= render "layouts/show_errors_when_creating", instance: report %>
+
+  <div class="field">
+    <%= form.label :title, t('.title')%>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo, t('.memo') %>
+    <%= form.text_area :memo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
