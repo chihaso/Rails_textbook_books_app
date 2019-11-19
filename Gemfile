@@ -65,6 +65,7 @@ gem "devise"
 gem "devise-i18n"
 gem "omniauth"
 gem "omniauth-github"
+gem "slim-rails"
 
 # Correspond to GitHub ecurity alerts
 gem "rubyzip", ">= 1.3.0"
