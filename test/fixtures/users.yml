@@ -1,0 +1,25 @@
+user_1:
+  name: User_1
+  email: user_1@mail
+  encrypted_password: <%= Devise::Encryptor.digest(User, "111111") %>
+  postal_code: user_1の郵便番号
+  street_address: user_1の住所
+  self_introduction: user_1の自己紹介
+  uid: 111
+  provider: github
+
+user_2:
+  name: User_2
+  email: user_2@mail
+  encrypted_password: <%= Devise::Encryptor.digest(User, "222222") %>
+  postal_code: user_2の郵便番号
+  street_address: user_2の住所
+  self_introduction: user_2の自己紹介
+
+user_3:
+  name: User_3
+  email: user_3@mail
+  encrypted_password: <%= Devise::Encryptor.digest(User, "333333") %>
+  postal_code: user_3の郵便番号
+  street_address: user_3の住所
+  self_introduction: user_3の自己紹介

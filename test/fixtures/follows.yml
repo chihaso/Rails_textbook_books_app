@@ -1,0 +1,3 @@
+user_1 follow user_2:
+  follower: user_1
+  followee: user_2
