@@ -1,0 +1,19 @@
+report_1:
+  title: report_1のタイトル
+  memo: report_1の内容
+  user: user_1
+
+report_2:
+  title: report_2のタイトル
+  memo: report_2の内容
+  user: user_1
+
+report_3:
+  title: report_3のタイトル
+  memo: report_3の内容
+  user: user_1
+
+report_4:
+  title: report_4のタイトル
+  memo: report_4の内容
+  user: user_2

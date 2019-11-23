@@ -1,0 +1,14 @@
+com1:
+  user: user_1
+  commentable: book_1 (Book)
+  memo: にゃおす
+
+com2:
+  user: user_2
+  commentable: book_1 (Book)
+  memo: わおす
+
+com3:
+  user: user_3
+  commentable: book_1 (Book)
+  memo: gaosu

@@ -1,0 +1,20 @@
+book_1:
+  title: book_1のタイトル
+  memo: book_1の内容
+  author: book_1の著者
+  picture: book_1の画像パス
+  user: user_1
+
+book_2:
+  title: book_2のタイトル
+  memo: book_2の内容
+  author: book_2の著者
+  picture: book_2の画像パス
+  user: user_1
+
+book_3:
+  title: book_3のタイトル
+  memo: book_3の内容
+  author: book_3の著者
+  picture: book_3の画像パス
+  user: user_1
