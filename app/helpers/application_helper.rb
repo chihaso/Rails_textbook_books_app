@@ -17,7 +17,7 @@ module ApplicationHelper
     elsif report_id
       hidden_field_tag :report_id, report_id
     else
-      flash[:notice] = t(errors.messages.unknown_comment_destination)
+      flash[:notice] = t("errors.messages.unknown_comment_destination")
     end
   end
 end

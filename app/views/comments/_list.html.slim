@@ -1,0 +1,17 @@
+.comments_area
+  h2
+    = t ".comments"
+  .comments
+    - comments.each do |comment|
+      .comment
+        p
+          span.user_name
+            = comment.user.name
+          span.post_time
+            = t(".post_at", time: comment.updated_at)
+        pre
+          = comment.memo
+        - if current_user == comment.user
+          = link_to t(".edit"), edit_comment_path(comment)
+          |  | 
+          = link_to t(".delete"), comment, method: :delete, data: { confirm: t('books_app.confirm.reconfirm') }

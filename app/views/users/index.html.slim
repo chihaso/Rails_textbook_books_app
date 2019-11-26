@@ -1,0 +1,35 @@
+h1
+  = t 'books_app.page_title.user_index'
+table
+  thead
+    tr
+      th
+        = t 'users.registrations.user_id'
+      th
+        = t 'users.registrations.name'
+      th
+        = t 'users.registrations.email'
+      th[colspan="3"]
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.id
+        td
+          = user.name
+        td
+          = user.email
+        td
+          = link_to t(".users_profile"), user_path(user.id)
+        td
+          - unless current_user == user
+            |  <div id=
+            ="follow_form_#{user.id}"
+            | > 
+            - if current_user.following?(user)
+              = render "follows/unfollow", user: user
+            - else
+              = render "follows/follow", user: user
+br
+= paginate @users
+br

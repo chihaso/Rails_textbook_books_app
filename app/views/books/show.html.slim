@@ -1,0 +1,27 @@
+h1
+  = t ".show"
+p
+  strong
+    = t 'books_app.title'
+    | :
+  = @book.title
+p
+  strong
+    = t 'books_app.memo'
+    | :
+  = @book.memo
+p
+  strong
+    = t 'books_app.author'
+    | :
+  = @book.author
+p
+  strong
+    = t 'books_app.picture'
+    | :
+  = image_tag(@book.picture_url) if @book.picture.present?
+= link_to t('books_app.edit'), edit_book_path(@book)
+|  | 
+= link_to t('books_app.back'), books_path
+= render "comments/list", comments: @book.comments
+= render "comments/form", comment: Comment.new, book_id: @book.id, report_id: nil

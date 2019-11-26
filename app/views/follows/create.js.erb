@@ -1,2 +1,0 @@
-var target = document.getElementById('<%="follow_form_#{@user.id}"%>')
-target.innerHTML = '<%= escape_javascript(render("follows/unfollow", user: @user)) %>';

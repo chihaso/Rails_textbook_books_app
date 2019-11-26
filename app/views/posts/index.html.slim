@@ -1,0 +1,24 @@
+h1
+  = t 'books_app.page_title.user_posts', username: @user.name
+table
+  thead
+    tr
+      th
+        = t 'books_app.book_id'
+      th
+        = t 'books_app.title'
+      th
+        = t 'books_app.author'
+      th[colspan="3"]
+  tbody
+    - @posts.each do |post|
+      tr
+        td
+          = post.id
+        td
+          = post.title
+        td
+          = post.author
+br
+= paginate @posts
+br

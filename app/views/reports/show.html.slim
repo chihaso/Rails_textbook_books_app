@@ -1,0 +1,23 @@
+h1
+  = t ".show"
+p
+  strong
+    = t '.user'
+    | :
+  = @report.user.name
+p
+  strong
+    = t '.title'
+    | :
+  = @report.title
+p
+  strong
+    = t '.memo'
+    | :
+  pre
+    = @report.memo
+= link_to t('.edit'), edit_report_path(@report)
+|  | 
+= link_to t('.back'), reports_path
+= render "comments/list", comments: @report.comments
+= render "comments/form", comment: Comment.new, book_id: nil, report_id: @report.id
