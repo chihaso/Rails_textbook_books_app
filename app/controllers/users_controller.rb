@@ -8,4 +8,9 @@ class UsersController < ApplicationController
   def index
     @users = User.page(params[:page]).per(5)
   end
+
+  def reports
+    @user = User.find(params[:id])
+    @reports = Kaminari.paginate_array(@user.reports).page(params[:page]).per(5)
+  end
 end

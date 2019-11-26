@@ -23,13 +23,11 @@ table
           = link_to t(".users_profile"), user_path(user.id)
         td
           - unless current_user == user
-            |  <div id=
-            ="follow_form_#{user.id}"
-            | > 
-            - if current_user.following?(user)
-              = render "follows/unfollow", user: user
-            - else
-              = render "follows/follow", user: user
+            div id="follow_form_#{user.id}" 
+              - if current_user.following?(user)
+                = render "follows/unfollow", user: user
+              - else
+                = render "follows/follow", user: user
 br
 = paginate @users
 br
