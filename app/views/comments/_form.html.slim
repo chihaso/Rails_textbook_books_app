@@ -1,9 +1,7 @@
-= form_with(model: comment, local: true, class: "new_comment_form" ) do |form|
+= form_with(model: [commentable, comment], local: true, class: "new_comment_form" ) do |form|
   = render "layouts/show_errors_when_creating", instance: comment
-  .field
+  div.field
     = form.label :memo, t(".comment")
     = form.text_area :memo
-  div
-    = set_comment_destination(book_id: book_id, report_id: report_id)
-  .actions
+  div.actions
     = form.submit

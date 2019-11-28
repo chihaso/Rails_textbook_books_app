@@ -1,9 +1,9 @@
-.comments_area
+div.comments_area
   h2
     = t ".comments"
-  .comments
+  div.comments
     - comments.each do |comment|
-      .comment
+      div.comment
         p
           span.user_name
             = comment.user.name

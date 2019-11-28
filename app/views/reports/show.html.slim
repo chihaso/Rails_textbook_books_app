@@ -20,4 +20,4 @@ p
 |  | 
 = link_to t('.back'), reports_path
 = render "comments/list", comments: @report.comments
-= render "comments/form", comment: Comment.new, book_id: nil, report_id: @report.id
+= render "comments/form", comment: Comment.new, commentable: @report

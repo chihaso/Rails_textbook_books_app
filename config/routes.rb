@@ -19,6 +19,14 @@ Rails.application.routes.draw do
       get :reports
     end
   end
+  resources :books do
+    resources :comments, only: [:create, :edit, :update, :destroy], module: :books
+  end
+
+  resources :reports do
+    resources :comments, only: [:create, :edit, :update, :destroy], module: :reports
+  end
+
   resources :follows, only: [:create, :destroy]
   resources :comments, only: [:create, :edit, :update, :destroy]
 end
