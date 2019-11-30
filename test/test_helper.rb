@@ -3,6 +3,7 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "supports/login_helper"
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -12,13 +13,5 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-
-  def login_user(user_email:, password:)
-    visit "/users/sign_in"
-    within(".new_user") do
-      fill_in("user[email]", with: user_email)
-      fill_in("user[password]", with: password)
-    end
-    click_button "commit"
-  end
+  include LoginHelper
 end
