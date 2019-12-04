@@ -44,6 +44,9 @@ ja:
       memo: 内容
       edit: 日報編集
       back: 一覧に戻る
+    create:
+      success:
+        create: 新規に日報を登録しました
     destroy:
       success:
         destroy: 日報を削除しました

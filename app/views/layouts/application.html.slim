@@ -32,8 +32,6 @@ html
       - else
         = link_to t(".top"), books_path, class: 'navbar-link'
         |  | 
-        = link_to t(".sign_up"), new_user_registration_path, class: 'navbar-link'
-        |  | 
         = link_to t(".sign_in"), new_user_session_path, class: 'navbar-link'
     .container
       = yield

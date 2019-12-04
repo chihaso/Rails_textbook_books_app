@@ -17,7 +17,7 @@ en:
       success:
         update: Update comment.
     form:
-      new_comment: Comment
+      comment: Comment
   reports:
     form:
       title: Title
@@ -44,6 +44,9 @@ en:
       memo: Memo
       edit: Edit Report
       back: Back to Index
+    create:
+      success:
+        create: Create new report.
     destroy:
       success:
         destroy: Delete report.
