@@ -37,7 +37,7 @@ class UsersTest < ApplicationSystemTestCase
     visit edit_user_registration_path(id: users(:user_1).id)
     fill_in "Email", with: "edit@mail"
     file_path = Rails.root.join("app/assets/images/test_image_2.jpg")
-    attach_file "user_avatar", file_path    
+    attach_file "user_avatar", file_path
     fill_in "user_name", with: "edit_user"
     fill_in "user_password", with: "edit_user"
     fill_in "user_password_confirmation", with: "edit_user"

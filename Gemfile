@@ -67,6 +67,11 @@ gem "omniauth"
 gem "omniauth-github"
 gem "pry-byebug"
 gem "slim-rails"
+gem "capistrano", require: false
+gem "capistrano-rails", require: false
+gem "capistrano-rbenv", require: false
+gem "ed25519", ">= 1.2", "< 2.0"
+gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 
 # Correspond to GitHub ecurity alerts
 gem "rubyzip", ">= 1.3.0"

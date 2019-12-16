@@ -41,3 +41,6 @@ plugin :tmp_restart
 
 # socket setting
 bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+
+stdout_redirect "#{Dir.pwd}/log/puma.stdout.log", "#{Dir.pwd}/log/puma.stderr.log", true
+daemonize true
