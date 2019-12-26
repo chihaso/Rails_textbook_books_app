@@ -1,0 +1,107 @@
+version: 2
+
+references:
+  default_docker_ruby_executor: &default_docker_ruby_executor
+    image: circleci/ruby:2.6.3-stretch-node
+    environment:
+      BUNDLE_JOBS: 3
+      BUNDLE_RETRY: 3
+      BUNDLE_PATH: vendor/bundle
+      PGHOST: 127.0.0.1
+      PGUSER: circleci-demo-ruby
+      PGPASSWORD: ""
+      RAILS_ENV: test
+  postgres: &postgres
+    image: circleci/postgres:9.5-alpine
+    environment:
+      POSTGRES_USER: circleci-demo-ruby
+      POSTGRES_DB: rails_blog_test
+      POSTGRES_PASSWORD: ""
+
+jobs:
+  build:
+    docker:
+      - *default_docker_ruby_executor
+    steps:
+      - checkout
+      # install budler
+      - run:
+          name: Install budler
+          command: gem install bundler:2.1.2
+      # Which version of bundler?
+      - run:
+          name: Which bundler?
+          command: bundle -v
+      # bundle cache
+      - restore_cache:
+          keys:
+            - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - rails-demo-bundle-v2-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      # Store bundle cache
+      - save_cache:
+          key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - rails-demo-yarn-{{ checksum "yarn.lock" }}
+            - rails-demo-yarn-
+      - run:
+          name: Yarn Install
+          command: yarn install --cache-folder ~/.cache/yarn
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: rails-demo-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+  test:
+    parallelism: 3
+    docker:
+      - *default_docker_ruby_executor
+      - *postgres
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - rails-demo-bundle-v2-
+      # install budler
+      - run:
+          name: Install budler
+          command: gem install bundler:2.1.2
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - restore_cache:
+          keys:
+            - rails-demo-yarn-{{ checksum "yarn.lock" }}
+            - rails-demo-yarn-
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+      # Run rspec in parallel
+      - run:
+          name: Run Tests
+          command: bundle exec rails test
+          when: always
+      - store_test_results:
+          path: test/reports
+      - store_artifacts:
+          path: test/reports
+          destination: reports
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
