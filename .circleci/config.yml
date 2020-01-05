@@ -18,17 +18,12 @@ references:
       POSTGRES_DB: books_app_test
       POSTGRES_PASSWORD: ""
 
-jobs:
-  build:
-    docker:
-      - *default_docker_ruby_executor
+commands:
+  install_gems:
     steps:
-      - checkout
-      # install bundler
       - run:
           name: Install budler
           command: gem install bundler:2.1.2
-      # bundle cache
       - restore_cache:
           keys:
             - books_app-bundle-{{ checksum "Gemfile.lock" }}
@@ -36,12 +31,13 @@ jobs:
       - run:
           name: Bundle Install
           command: bundle check || bundle install
-      # Store bundle cache
       - save_cache:
           key: books_app-bundle-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      # Only necessary if app uses webpacker or yarn in some other way
+
+  install_yarn_packages:
+    steps:
       - restore_cache:
           keys:
             - books_app-yarn-{{ checksum "yarn.lock" }}
@@ -49,31 +45,28 @@ jobs:
       - run:
           name: Yarn Install
           command: yarn install --cache-folder ~/.cache/yarn
-      # Store yarn / webpacker cache
       - save_cache:
           key: books_app-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+
+jobs:
+  build:
+    docker:
+      - *default_docker_ruby_executor
+    steps:
+      - checkout
+      - install_gems
+      - install_yarn_packages
+
   test:
     docker:
       - *default_docker_ruby_executor
       - *postgres
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - books_app-bundle-{{ checksum "Gemfile.lock" }}
-            - books_app-bundle-
-      - run:
-          name: Install budler
-          command: gem install bundler:2.1.2
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
-      - restore_cache:
-          keys:
-            - books_app-yarn-{{ checksum "yarn.lock" }}
-            - books_app-yarn-
+      - install_gems
+      - install_yarn_packages
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
@@ -91,12 +84,7 @@ jobs:
       - *default_docker_ruby_executor
     steps:
       - checkout
-      - run:
-          name: Install budler
-          command: gem install bundler:2.1.2
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
+      - install_gems
       - run:
           name: Deploy
           command: bundle exec cap production deploy
@@ -115,4 +103,4 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              only: test
